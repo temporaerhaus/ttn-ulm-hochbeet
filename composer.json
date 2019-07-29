@@ -1,0 +1,12 @@
+{
+    "require": {
+        "influxdb/influxdb-php": "^1.14",
+        "altorouter/altorouter": "^1.2",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "TTNUlm\\": "src/"
+        }
+    }
+}
