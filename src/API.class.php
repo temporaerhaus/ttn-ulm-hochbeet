@@ -5,7 +5,7 @@ class API {
 
     public function returnData($id, $from, $to) {
 
-        $res = DB::create()->getData($id, $from, $to);
+        $res = DB::create()->getData($id);
 
         if ($res) {
             echo json_encode([
