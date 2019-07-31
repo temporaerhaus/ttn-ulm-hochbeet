@@ -32,12 +32,11 @@ class DB {
      * @return array
      * @throws \Exception
      */
-    public function getData($id, $duration = '2h') {
+    public function getData($id, $from, $to, $duration = '2h') {
         $db = $this->client->selectDB('telegraf');
         $sensorName = $this->sensors[$id];
 
-        $result = $db->query(
-            "SELECT payload_fields_shtTemp,
+        $sqlString = "SELECT payload_fields_shtTemp,
                            payload_fields_shtHum,
                            payload_fields_bmpTemp,
                            payload_fields_bmpPres,
@@ -47,10 +46,10 @@ class DB {
                            payload_fields_uvi,
                            payload_fields_battery                            
                    FROM telegraf.autogen.mqtt_consumer 
-                   WHERE time > (now() - ".$duration.")
-                   AND topic='feather_demo/devices/".$sensorName."/up'"
-        );
+                   WHERE time >= '".$from."' AND time <= '".$to."' 
+                   AND topic='feather_demo/devices/".$sensorName."/up'";
 
+        $result = $db->query($sqlString);
         return $result->getPoints();
     }
 
