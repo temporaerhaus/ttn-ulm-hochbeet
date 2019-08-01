@@ -14,9 +14,9 @@ Es existiert nur ein einziger API Call:
 
 ### Parameter
 
-`id`: Fortlaufende Nummer der Sensoren. Aktuell existiert nur die `1`.
-`from`: Timestamp, ab wann die Daten abgerufen werden sollen. Format: `Y-m-d H:i:s`
-`to`: Timestamp, bis wann die Daten abgerufen werden sollen. Format: `Y-m-d H:i:s`
+* `id`: Fortlaufende Nummer der Sensoren. Aktuell existiert nur die `1`.
+* `from`: Timestamp, ab wann die Daten abgerufen werden sollen. Format: `Y-m-d H:i:s`
+* `to`: Timestamp, bis wann die Daten abgerufen werden sollen. Format: `Y-m-d H:i:s`
 
 ### Response
 
