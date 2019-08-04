@@ -2,7 +2,8 @@
     "require": {
         "influxdb/influxdb-php": "^1.14",
         "altorouter/altorouter": "^1.2",
-        "ext-json": "*"
+        "ext-json": "*",
+        "ext-apcu": "*"
     },
     "config": {
         "optimize-autoloader": true,
